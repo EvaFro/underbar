@@ -179,10 +179,10 @@
 		  accumulator = collection[0];
 		  collection = collection.slice(1);
 	  }
-	  return _.each(collection,function(item){
-		  iterator(accumulator,item);
+	  _.each(collection,function(item){
+		  accumulator = iterator(accumulator,item);
 	  });
-	  
+	  return accumulator;
   };
 
   // Determine if the array or object contains a given value (using `===`).
