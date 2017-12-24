@@ -102,6 +102,16 @@
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array, isSorted, iterator) {
+	  // create a newArray with first var from array
+	  // iterate over array
+		// unique values - 
+		// push unique values to the newArray
+			
+	 //return newArray
+	  var newArray = array[0];
+	  _.each(array,function(item){
+		  var 
+	  });
   };
 
 
