@@ -106,12 +106,21 @@
 	  // iterate over array
 		// unique values - 
 		// push unique values to the newArray
-			
+	var newArray = [];
+	if(isSorted===true){
+		
+	}else{
 	 //return newArray
-	  var newArray = array[0];
+	
+	  var dup;
 	  _.each(array,function(item){
-		  var 
+		  dup = _.indexOf(newArray,item);
+		  if(dup === -1){
+			  newArray.push(item);
+		  }
 	  });
+	}
+	  return newArray;
   };
 
 
@@ -120,6 +129,8 @@
     // map() is a useful primitive iteration function that works a lot
     // like each(), but in addition to running the operation on all
     // the members, it also maintains an array of results.
+	
+	
   };
 
   /*
