@@ -108,7 +108,7 @@
 		// push unique values to the newArray
 	var newArray = [];
 	if(isSorted===true){
-		
+		// not quite sure how to make this code run faster here 
 	}else{
 	 //return newArray
 	
