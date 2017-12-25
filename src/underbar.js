@@ -143,7 +143,7 @@
 	_.each(collection,function(item){
 		results.push(iterator(item));
 	});
-	return results
+	return results;
   };
 
   /*
@@ -195,6 +195,9 @@
 	  return accumulator;
   };
 //////////////////////// Part 2 ////////////////////////////////////
+
+
+
   // Determine if the array or object contains a given value (using `===`).
   _.contains = function(collection, target) {
     // TIP: Many iteration problems can be most easily expressed in
@@ -211,6 +214,13 @@
   // Determine whether all of the elements match a truth test.
   _.every = function(collection, iterator) {
     // TIP: Try re-using reduce() here.
+	var newIterator = iterator || _.identity
+	return _.reduce(collection,function(test,item){
+		if(test===false){
+			return false;
+		}
+		return !!(newIterator(item));
+	},true);
   };
 
   // Determine whether any of the elements pass a truth test. If no iterator is
