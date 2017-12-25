@@ -104,23 +104,33 @@
   _.uniq = function(array, isSorted, iterator) {
 	  // create a newArray with first var from array
 	  // iterate over array
-		// unique values - 
+		// !isSorted = sort array
+		// use iterator/_.identity to convert values
+		//  find unique values 
 		// push unique values to the newArray
-	var newArray = [];
-	if(isSorted===true){
-		// not quite sure how to make this code run faster here 
-	}else{
-	 //return newArray
+		//return newArray
+	var dupFree = [];
+	var newDupFreeArray = [];
+	var convertedArray = [];
+	var copiedArray = array;
+	var convertF = iterator || _.identity  
+	if(!isSorted){
+		copiedArray = copiedArray.sort();
+	}
+	
+	_.each(copiedArray,function(item){
+		convertedArray.push(convertF(item));
+	});
 	
 	  var dup;
-	  _.each(array,function(item){
-		  dup = _.indexOf(newArray,item);
+	  _.each(convertedArray,function(item,index){
+		  dup = _.indexOf(dupFree,item);
 		  if(dup === -1){
-			  newArray.push(item);
+			  dupFree.push(item);
+			  newDupFreeArray.push(copiedArray[index]);
 		  }
 	  });
-	}
-	  return newArray;
+	  return newDupFreeArray;
   };
 
 
