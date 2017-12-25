@@ -267,11 +267,11 @@
   // exists in obj
   _.defaults = function(obj) {
 	  var args = Array.from(arguments);
-	  _.each(args,function(item){
-		  _.each(item,function(nitem,key){
+	  _.each(args,function(addObj){
+		  _.each(addObj,function(item,key){
 			  var probNames = Object.getOwnPropertyNames(obj);
 			  if(!_.contains(probNames,key)){
-				  Object.assign(obj,nitem);
+				  Object.assign(obj,item);
 			  }
 		  });
 		  
