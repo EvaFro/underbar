@@ -264,7 +264,7 @@
   };
 
   // Like extend, but doesn't ever overwrite a key that already
-  // exists in obj
+  // exists in obj 
   _.defaults = function(obj) {
 	  var args = Array.from(arguments);
 	  args = args.slice(1);
