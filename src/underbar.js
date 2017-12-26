@@ -359,6 +359,18 @@
   // input array. For a tip on how to make a copy of an array, see:
   // http://mdn.io/Array.prototype.slice
   _.shuffle = function(array) {
+	  var newArray = array.slice();
+	  var index = array.length;
+	  var switchIndex;
+	  var holdValue;
+	  while(index){
+		  switchIndex = Math.floor(Math.random() *index);
+		  index -= 1;
+		  holdValue = newArray[index];
+		  newArray[index] = newArray[switchIndex];
+		  newArray[switchIndex] = holdValue;
+	  }
+	  return newArray;
   };
 
 
