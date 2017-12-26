@@ -233,7 +233,7 @@
 			return true;
 		}
 		return !!(newIterator(item));
-	},false)
+	},false);
   };
 
 
@@ -267,11 +267,12 @@
   // exists in obj
   _.defaults = function(obj) {
 	  var args = Array.from(arguments);
+	  args = args.slice(1);
 	  _.each(args,function(addObj){
 		  _.each(addObj,function(item,key){
 			  var probNames = Object.getOwnPropertyNames(obj);
 			  if(!_.contains(probNames,key)){
-				  Object.assign(obj,item);
+				  obj[key] = item;
 			  }
 		  });
 		  
