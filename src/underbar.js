@@ -322,6 +322,15 @@
   // already computed the result for the given argument and return that value
   // instead if possible.
   _.memoize = function(func) {
+	  var storedResult = {};
+	  return function(){
+		  var key = JSON.stringify(arguments);
+		  if(!storedResult.hasOwnProperty(key)){
+			  storedResult[key] = func.apply(this, arguments); 
+		  }
+		  return storedResult[key];
+	  }
+
   };
 
   // Delays a function for the given number of milliseconds, and then calls
